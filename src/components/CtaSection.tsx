@@ -9,28 +9,26 @@ const CtaSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass rounded-2xl p-10 md:p-16 text-center glow-primary"
+          className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Ready to Transform Your Digital Presence?
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            Ready to Build Something
+            <br />
+            That <span className="serif-italic font-normal text-accent">Performs</span> — Not Just Looks Good?
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-            Join 2,000+ clients who trust me to deliver exceptional results. Let's discuss how I can accelerate your growth.
+          <p className="text-muted-foreground text-lg mb-4 max-w-xl mx-auto">
+            I work with a limited number of clients each quarter to ensure every project gets the 
+            strategic depth and attention it deserves.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold hover:brightness-110 transition"
-            >
-              Start Your Project <ArrowRight size={18} />
-            </a>
-            <a
-              href="#portfolio"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg border border-border text-foreground font-semibold hover:bg-secondary transition"
-            >
-              View My Work
-            </a>
-          </div>
+          <p className="text-accent text-sm font-medium uppercase tracking-wider mb-10">
+            Limited availability — serious inquiries only
+          </p>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-10 py-4 rounded-sm bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all tracking-wide text-lg"
+          >
+            Apply To Work With Me <ArrowRight size={20} />
+          </a>
         </motion.div>
       </div>
     </section>

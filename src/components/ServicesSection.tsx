@@ -1,42 +1,35 @@
 import { motion } from "framer-motion";
-import { Globe, TrendingUp, Search, Share2, Mail, Palette } from "lucide-react";
 
 const services = [
   {
-    icon: Globe,
-    title: "Website Design & Development",
-    description: "Custom, conversion-focused websites built with cutting-edge technologies that captivate your audience and drive results.",
-    tags: ["Custom Development", "Responsive Design", "CMS Integration", "E-commerce"],
+    title: "Conversion-Focused Website Architecture",
+    who: "Brands ready to turn their website into a revenue engine",
+    problem: "Your site looks good but doesn't convert. Visitors leave without taking action.",
+    transformation: "A strategically designed website that guides visitors toward conversion at every touchpoint.",
   },
   {
-    icon: TrendingUp,
-    title: "Conversion Rate Optimization",
-    description: "Data-driven strategies to turn more visitors into customers through A/B testing, analytics, and UX improvements.",
-    tags: ["A/B Testing", "Heat Map Analysis", "User Research", "Funnel Optimization"],
+    title: "Revenue-Driven Funnel Systems",
+    who: "Businesses scaling beyond referrals and word-of-mouth",
+    problem: "You're leaving money on the table with no automated sales system.",
+    transformation: "End-to-end funnel architecture that captures, nurtures, and converts leads on autopilot.",
   },
   {
-    icon: Search,
-    title: "SEO & Google Ads",
-    description: "Dominate search rankings and drive qualified traffic with technical SEO and high-performance ad campaigns.",
-    tags: ["Technical SEO", "Content Strategy", "PPC Management", "Local SEO"],
+    title: "Brand Authority Positioning",
+    who: "Experts and founders ready to own their market",
+    problem: "You're competing on price because your brand doesn't command premium perception.",
+    transformation: "A brand identity and digital presence that positions you as the obvious choice.",
   },
   {
-    icon: Share2,
-    title: "Social Media Marketing",
-    description: "Engaging campaigns that build communities and drive meaningful conversions across all major platforms.",
-    tags: ["Content Creation", "Paid Social", "Community Management", "Strategy"],
+    title: "Performance Marketing Strategy",
+    who: "Growth-stage businesses ready to scale profitably",
+    problem: "You're spending on ads but can't track or optimize real ROI.",
+    transformation: "Data-driven campaigns across SEO, paid, and social that deliver measurable, scalable growth.",
   },
   {
-    icon: Mail,
-    title: "Email Marketing & Automation",
-    description: "Smart email flows and automation sequences that nurture leads and drive repeat purchases at scale.",
-    tags: ["Email Strategy", "Flow Automation", "Segmentation", "A/B Testing"],
-  },
-  {
-    icon: Palette,
-    title: "Branding & Creative Strategy",
-    description: "Distinctive visual identities that resonate with your audience and stand out in crowded markets.",
-    tags: ["Brand Identity", "Logo Design", "Style Guides", "Creative Direction"],
+    title: "Full Digital Growth System",
+    who: "Ambitious brands that want everything working together",
+    problem: "Fragmented digital efforts with no cohesive strategy.",
+    transformation: "An integrated ecosystem — brand, website, funnels, marketing — all designed to compound results.",
   },
 ];
 
@@ -48,39 +41,42 @@ const ServicesSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="max-w-4xl mx-auto mb-16"
         >
-          <p className="text-primary text-sm font-medium uppercase tracking-wider mb-3">What I Do</p>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Services That Drive Results</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            End-to-end digital solutions that transform your vision into reality and accelerate business growth.
+          <p className="text-accent text-sm font-medium uppercase tracking-[0.25em] mb-6">Services</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Not Services.{" "}
+            <span className="serif-italic font-normal text-accent">Transformations.</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            I don't sell deliverables. I solve problems that are costing you revenue.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-4xl mx-auto space-y-4">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="glass rounded-xl p-6 hover:border-primary/30 transition-all group"
+              transition={{ delay: i * 0.08 }}
+              className="group border border-border rounded-sm p-8 hover:border-accent/40 hover:bg-card/50 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
-                <service.icon className="text-primary" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-muted-foreground text-sm mb-4">{service.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {service.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <h3 className="text-xl md:text-2xl font-heading font-bold mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
+              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div>
+                  <p className="text-accent text-xs uppercase tracking-wider mb-1">Who it's for</p>
+                  <p className="text-muted-foreground">{service.who}</p>
+                </div>
+                <div>
+                  <p className="text-accent text-xs uppercase tracking-wider mb-1">The problem</p>
+                  <p className="text-muted-foreground">{service.problem}</p>
+                </div>
+                <div>
+                  <p className="text-accent text-xs uppercase tracking-wider mb-1">The transformation</p>
+                  <p className="text-foreground font-medium">{service.transformation}</p>
+                </div>
               </div>
             </motion.div>
           ))}

@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Results", href: "#results" },
   { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
   { label: "Process", href: "#process" },
   { label: "Testimonials", href: "#testimonials" },
-  { label: "About", href: "#about" },
 ];
 
 const Navbar = () => {
@@ -24,17 +24,14 @@ const Navbar = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border/50 shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center font-heading font-bold text-primary-foreground text-lg">
-            L
-          </div>
-          <span className="font-heading font-semibold text-lg text-foreground">
-            Low <span className="text-primary">Key</span>
+      <div className="container mx-auto flex items-center justify-between py-5 px-4 md:px-8">
+        <a href="#" className="flex items-center gap-3">
+          <span className="font-heading font-bold text-xl tracking-tight text-foreground">
+            Low<span className="text-accent">Key</span>
           </span>
         </a>
 
@@ -43,7 +40,7 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 tracking-wide"
             >
               {link.label}
             </a>
@@ -52,9 +49,9 @@ const Navbar = () => {
 
         <a
           href="#contact"
-          className="hidden md:inline-flex px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:brightness-110 transition"
+          className="hidden md:inline-flex px-6 py-2.5 rounded-sm bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-all tracking-wide"
         >
-          Get In Touch
+          Work With Me
         </a>
 
         <button
@@ -69,7 +66,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden glass border-t border-border"
+          className="md:hidden bg-background/95 backdrop-blur-lg border-t border-border/50"
         >
           <div className="flex flex-col gap-4 p-6">
             {navLinks.map((link) => (
@@ -77,7 +74,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
               </a>
@@ -85,9 +82,9 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium text-sm text-center"
+              className="px-6 py-2.5 rounded-sm bg-primary text-primary-foreground font-medium text-sm text-center"
             >
-              Get In Touch
+              Work With Me
             </a>
           </div>
         </motion.div>
