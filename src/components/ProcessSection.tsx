@@ -1,47 +1,69 @@
 import { motion } from "framer-motion";
 
 const steps = [
-  { num: "01", title: "Discover", desc: "I dive deep into your business, competitors, and target audience to understand your unique challenges." },
-  { num: "02", title: "Strategize", desc: "I develop a comprehensive strategy tailored to your goals, timeline, and budget with clear KPIs." },
-  { num: "03", title: "Design & Build", desc: "I create stunning, conversion-focused designs that reflect your brand and resonate with your audience." },
-  { num: "04", title: "Launch", desc: "After rigorous testing and refinement, I launch your project with full support and monitoring." },
-  { num: "05", title: "Scale", desc: "I continuously optimize and scale your digital presence to drive sustainable growth and max ROI." },
+  {
+    num: "01",
+    title: "Deep Discovery",
+    desc: "I immerse myself in your business, market, and audience. No surface-level briefs — I need to understand the problem before I design the solution.",
+  },
+  {
+    num: "02",
+    title: "Strategy Mapping",
+    desc: "Every design decision is backed by a strategic framework. I map the user journey, define conversion goals, and architect the experience before a single pixel is placed.",
+  },
+  {
+    num: "03",
+    title: "Experience Design",
+    desc: "Where strategy becomes visual. I craft interfaces that feel intuitive and premium — every element intentional, every interaction purposeful.",
+  },
+  {
+    num: "04",
+    title: "Optimization & Testing",
+    desc: "Launch is never the finish line. I test, measure, and refine based on real data to ensure maximum performance and conversion.",
+  },
+  {
+    num: "05",
+    title: "Scale & Growth",
+    desc: "Once the foundation performs, I help you scale — expanding channels, optimizing spend, and compounding results over time.",
+  },
 ];
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="section-padding">
+    <section id="process" className="section-padding bg-muted/40">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="max-w-4xl mx-auto mb-16"
         >
-          <p className="text-primary text-sm font-medium uppercase tracking-wider mb-3">My Process</p>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">How I Work</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            A proven 5-step process refined over 2,000+ successful projects.
+          <p className="text-accent text-sm font-medium uppercase tracking-[0.25em] mb-6">Process</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            A Proven System.{" "}
+            <span className="serif-italic font-normal text-accent">Not Guesswork.</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            Refined over 2,000+ projects. Every step exists because it drives results.
           </p>
         </motion.div>
 
-        <div className="relative max-w-3xl mx-auto">
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-border hidden md:block" />
+        <div className="max-w-3xl mx-auto">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="flex gap-6 mb-10 last:mb-0"
+              className="flex gap-8 mb-12 last:mb-0"
             >
-              <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                <span className="text-primary font-heading font-bold">{step.num}</span>
+              <div className="flex-shrink-0">
+                <span className="text-3xl font-heading font-bold text-accent/40">{step.num}</span>
               </div>
-              <div className="pt-3">
-                <h3 className="text-xl font-semibold mb-1">{step.title}</h3>
-                <p className="text-muted-foreground text-sm">{step.desc}</p>
+              <div className="border-t border-border pt-4 flex-1">
+                <h3 className="text-xl font-heading font-bold mb-2">{step.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
               </div>
             </motion.div>
           ))}

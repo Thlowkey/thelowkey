@@ -1,111 +1,82 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 
 const ContactSection = () => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", business: "", service: "", budget: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", business: "", service: "", budget: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  return (
-    <section id="contact" className="section-padding bg-muted/30">
-      <div className="container mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <p className="text-primary text-sm font-medium uppercase tracking-wider mb-3">Get In Touch</p>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Let's Build Something Amazing</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Ready to transform your digital presence? Reach out and let's discuss your project.
-          </p>
-        </motion.div>
+  const inputStyles = "w-full px-4 py-3.5 rounded-sm bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-accent transition-all";
 
-        <div className="grid lg:grid-cols-5 gap-10 max-w-5xl mx-auto">
+  return (
+    <section id="contact" className="section-padding bg-primary text-primary-foreground">
+      <div className="container mx-auto">
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 space-y-6"
+            className="mb-12"
           >
-            <div className="glass rounded-xl p-5 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Mail className="text-primary" size={18} />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground mb-1">Email me at</p>
-                <p className="font-medium text-sm">hello@lowkey.design</p>
-              </div>
-            </div>
-            <div className="glass rounded-xl p-5 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Phone className="text-primary" size={18} />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground mb-1">Call me at</p>
-                <p className="font-medium text-sm">+1 (234) 567-890</p>
-              </div>
-            </div>
-            <div className="glass rounded-xl p-5 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <MapPin className="text-primary" size={18} />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground mb-1">Based in</p>
-                <p className="font-medium text-sm">Available Worldwide</p>
-              </div>
-            </div>
+            <p className="text-accent text-sm font-medium uppercase tracking-[0.25em] mb-6">Contact</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Let's Talk{" "}
+              <span className="serif-italic font-normal text-accent">Growth.</span>
+            </h2>
+            <p className="text-primary-foreground/60 text-lg max-w-xl">
+              Tell me about your project and I'll get back to you within 24 hours.
+            </p>
           </motion.div>
 
           <motion.form
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3 glass rounded-xl p-6 space-y-4"
+            transition={{ delay: 0.1 }}
+            className="space-y-4"
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="grid sm:grid-cols-2 gap-4">
-              <input name="name" placeholder="Full Name *" required value={form.name} onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
-              <input name="email" type="email" placeholder="Email Address *" required value={form.email} onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+              <input name="name" placeholder="Your Name *" required value={form.name} onChange={handleChange} className={inputStyles} />
+              <input name="email" type="email" placeholder="Email Address *" required value={form.email} onChange={handleChange} className={inputStyles} />
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
-              <input name="phone" placeholder="Phone Number" value={form.phone} onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
-              <input name="business" placeholder="Business Name" value={form.business} onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <select name="service" value={form.service} onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground text-sm focus:outline-none focus:ring-1 focus:ring-primary">
-                <option value="">Service Interested In *</option>
-                <option>Website Design</option>
-                <option>E-commerce Store</option>
-                <option>SEO Optimization</option>
-                <option>Digital Marketing</option>
-                <option>Branding</option>
-                <option>Conversion Optimization</option>
-              </select>
-              <select name="budget" value={form.budget} onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground text-sm focus:outline-none focus:ring-1 focus:ring-primary">
-                <option value="">Budget Range *</option>
-                <option>$100 – $300</option>
-                <option>$300 – $700</option>
-                <option>$700 – $1,500</option>
-                <option>$1,500+</option>
+              <input name="business" placeholder="Business / Brand Name" value={form.business} onChange={handleChange} className={inputStyles} />
+              <select name="service" value={form.service} onChange={handleChange} className={inputStyles}>
+                <option value="">What do you need? *</option>
+                <option>Conversion-Focused Website</option>
+                <option>Revenue Funnel System</option>
+                <option>Brand Authority Positioning</option>
+                <option>Performance Marketing</option>
+                <option>Full Digital Growth System</option>
               </select>
             </div>
-            <textarea name="message" placeholder="Tell me about your project" rows={4} value={form.message} onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary resize-none" />
-            <button type="submit" className="w-full py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold hover:brightness-110 transition">
-              Send Message
+            <select name="budget" value={form.budget} onChange={handleChange} className={inputStyles}>
+              <option value="">Investment Range *</option>
+              <option>$500 – $2,000</option>
+              <option>$2,000 – $5,000</option>
+              <option>$5,000 – $10,000</option>
+              <option>$10,000+</option>
+            </select>
+            <textarea name="message" placeholder="Tell me about your project, goals, and timeline..." rows={5} value={form.message} onChange={handleChange} className={`${inputStyles} resize-none`} />
+            <button type="submit" className="inline-flex items-center gap-2 px-10 py-4 rounded-sm bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-all tracking-wide">
+              Submit Inquiry <ArrowRight size={18} />
             </button>
           </motion.form>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-12 pt-8 border-t border-primary-foreground/10 flex items-center gap-3"
+          >
+            <Mail size={16} className="text-accent" />
+            <span className="text-primary-foreground/60 text-sm">Or reach me directly at <strong className="text-primary-foreground">hello@lowkey.design</strong></span>
+          </motion.div>
         </div>
       </div>
     </section>
