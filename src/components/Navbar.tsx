@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import lowkeyLogo from "@/assets/lowkey-logo.png";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -29,10 +30,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-4 md:px-8">
-        <a href="#" className="flex items-center gap-3">
-          <span className="font-heading font-bold text-xl tracking-tight text-foreground">
-            Low<span className="text-accent">Key</span>
-          </span>
+        <a href="#" className="flex items-center gap-2">
+          <img src={lowkeyLogo} alt="Low Key" className="h-8 w-auto brightness-110 saturate-50 sepia-[0.2]" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
