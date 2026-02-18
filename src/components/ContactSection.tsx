@@ -75,7 +75,7 @@ const ContactSection = () => {
             className="mt-12 pt-8 border-t border-primary-foreground/10 flex items-center gap-3"
           >
             <Mail size={16} className="text-accent" />
-            <span className="text-muted-foreground text-sm">Or reach me directly at <strong className="text-foreground">hello@lowkey.design</strong></span>
+            <span className="text-muted-foreground text-sm">Or reach me directly at <strong className="text-foreground">alwaysonalowkey@gmail.com</strong></span>
           </motion.div>
         </div>
       </div>
