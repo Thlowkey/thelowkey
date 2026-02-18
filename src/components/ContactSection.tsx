@@ -12,7 +12,7 @@ const ContactSection = () => {
   const inputStyles = "w-full px-4 py-3.5 rounded-sm bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-accent transition-all";
 
   return (
-    <section id="contact" className="section-padding bg-primary text-primary-foreground">
+    <section id="contact" className="section-padding bg-card">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -26,7 +26,7 @@ const ContactSection = () => {
               Let's Talk{" "}
               <span className="serif-italic font-normal text-accent">Growth.</span>
             </h2>
-            <p className="text-primary-foreground/60 text-lg max-w-xl">
+            <p className="text-muted-foreground text-lg max-w-xl">
               Tell me about your project and I'll get back to you within 24 hours.
             </p>
           </motion.div>
@@ -75,7 +75,7 @@ const ContactSection = () => {
             className="mt-12 pt-8 border-t border-primary-foreground/10 flex items-center gap-3"
           >
             <Mail size={16} className="text-accent" />
-            <span className="text-primary-foreground/60 text-sm">Or reach me directly at <strong className="text-primary-foreground">hello@lowkey.design</strong></span>
+            <span className="text-muted-foreground text-sm">Or reach me directly at <strong className="text-foreground">hello@lowkey.design</strong></span>
           </motion.div>
         </div>
       </div>
