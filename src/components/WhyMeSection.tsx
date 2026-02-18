@@ -25,7 +25,7 @@ const reasons = [
 
 const WhyMeSection = () => {
   return (
-    <section className="section-padding bg-muted/40">
+    <section className="section-padding bg-card">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <motion.div

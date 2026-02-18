@@ -30,7 +30,7 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="section-padding bg-muted/40">
+    <section id="process" className="section-padding bg-card">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

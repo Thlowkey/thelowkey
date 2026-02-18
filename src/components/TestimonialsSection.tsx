@@ -2,35 +2,40 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    text: "Low Key didn't just redesign our website — he re-engineered our entire online revenue model. Within 90 days, our conversion rate jumped 340% and we added $1.2M in ARR. This isn't a designer. This is a growth strategist.",
-    name: "Sarah Johnson",
-    role: "CEO, TechFlow",
+    text: "Working with Low Key completely restructured our ecommerce strategy. Within 6 months, our conversion rate increased by 47% and revenue scaled past seven figures. His approach isn't just design — it's calculated growth.",
+    name: "Daniel M.",
+    role: "Premium Apparel Brand Owner",
   },
   {
-    text: "I've worked with agencies that charged 5x more and delivered a fraction of the results. Low Key understood our market better than our own team and built a brand presence that attracts exactly the right clients.",
-    name: "Michael Chen",
-    role: "Founder, GreenLeaf Organics",
+    text: "Low Key redesigned our Shopify store and rebuilt our entire funnel. In 90 days, our sales grew by 63%. The clarity in user flow and checkout optimization made an immediate difference.",
+    name: "Sarah L.",
+    role: "Skincare Founder",
   },
   {
-    text: "Our Shopify store was bleeding money through cart abandonment. Low Key rebuilt the entire experience and implemented automated recovery flows. We went from struggling to $50K+ monthly revenue in under 6 months.",
-    name: "Emily Rodriguez",
-    role: "Owner, Artisan Coffee Co.",
+    text: "We had traffic but no real performance. After implementing Low Key's strategy, our average order value increased by 38% and repeat purchases improved significantly.",
+    name: "Victor A.",
+    role: "Supplement Brand CEO",
   },
   {
-    text: "The strategic depth was what set this apart. Every design decision had a reason. Every page had a purpose. Our lead quality improved by 3x because the website now pre-qualifies before they even contact us.",
-    name: "David Park",
-    role: "Managing Director, Nexus Financial",
+    text: "Low Key thinks like a strategist, not a freelancer. Our website now communicates authority, and our bounce rate dropped by 29% within weeks.",
+    name: "Amanda T.",
+    role: "Business Coach",
   },
   {
-    text: "Working with Low Key felt like having a CMO, designer, and strategist in one. He didn't just build what I asked for — he challenged my assumptions and built something that actually worked. Best investment I've made.",
-    name: "Amara Osei",
-    role: "Founder, Vitality Wellness",
+    text: "From discovery to launch, every step was structured and intentional. We've generated over $1.2M in tracked revenue since the rebuild.",
+    name: "James R.",
+    role: "Home Decor Ecommerce Brand",
+  },
+  {
+    text: "The difference between before and after working with Low Key is night and day. Our site now converts consistently and feels like a premium brand.",
+    name: "Chloe W.",
+    role: "DTC Jewelry Brand Founder",
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="section-padding">
+    <section id="testimonials" className="section-padding bg-card">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,8 +57,8 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className={`border border-border rounded-sm p-8 ${i === 0 ? 'md:col-span-2' : ''}`}
+              transition={{ delay: i * 0.08 }}
+              className={`border border-border rounded-sm p-8 hover:border-accent/30 transition-all duration-300 ${i === 0 ? 'md:col-span-2' : ''}`}
             >
               <p className="text-foreground/80 leading-relaxed mb-6 text-sm md:text-base">"{t.text}"</p>
               <div className="border-t border-border pt-4">
