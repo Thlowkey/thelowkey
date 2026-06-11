@@ -1,31 +1,31 @@
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import PortfolioSection from "@/components/PortfolioSection";
-import ServicesSection from "@/components/ServicesSection";
-import WhyMeSection from "@/components/WhyMeSection";
-import ProcessSection from "@/components/ProcessSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import CtaSection from "@/components/CtaSection";
-import ContactSection from "@/components/ContactSection";
+import MissionControl from "@/components/MissionControl";
+import FutureSimulator from "@/components/FutureSimulator";
+import TheVault from "@/components/TheVault";
+import LiveBrain from "@/components/LiveBrain";
+import JourneyMap from "@/components/JourneyMap";
+import RealTimeValue from "@/components/RealTimeValue";
+import AchievementUniverse from "@/components/AchievementUniverse";
+import ChooseAdventure from "@/components/ChooseAdventure";
+import FinalSection from "@/components/FinalSection";
+import EasterEgg from "@/components/EasterEgg";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+export default function Index() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background noise">
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <PortfolioSection />
-      <ServicesSection />
-      <WhyMeSection />
-      <ProcessSection />
-      <TestimonialsSection />
-      <CtaSection />
-      <ContactSection />
+      <MissionControl />
+      <FutureSimulator />
+      <TheVault />
+      <LiveBrain />
+      <RealTimeValue />
+      <JourneyMap />
+      <AchievementUniverse />
+      <ChooseAdventure />
+      <FinalSection />
+      <EasterEgg />
       <Footer />
     </div>
   );
-};
-
-export default Index;
+}
