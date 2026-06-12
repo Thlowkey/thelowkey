@@ -2,7 +2,7 @@ import lowkeyLogo from "@/assets/lowkey-logo.png";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border/60 py-12 px-4 md:px-8">
+    <footer className="py-10 px-4 md:px-8">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
           <div className="flex items-center gap-3">
@@ -17,8 +17,8 @@ export default function Footer() {
             <span className="font-mono text-[10px] uppercase tracking-[0.25em]">© {new Date().getFullYear()} LOW-KEY.OS</span>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-border/40 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/60 text-center">
-          // Hint: somewhere on this page, a secret waits. Try ↑↑↓↓←→←→
+        <div className="mt-6 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/50 text-center">
+          // Hint: a secret waits. Try ↑↑↓↓←→←→
         </div>
       </div>
     </footer>

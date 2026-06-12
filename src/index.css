@@ -102,7 +102,9 @@
     pointer-events: none;
   }
 
-  .section-padding { @apply py-24 md:py-32 px-4 md:px-8; }
+  .section-padding { @apply py-16 md:py-20 px-4 md:px-8; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
   .text-gradient-cyan {
     background: linear-gradient(135deg, hsl(189 94% 75%), hsl(189 94% 50%) 60%, hsl(220 90% 60%));

@@ -6,6 +6,7 @@ import LiveBrain from "@/components/LiveBrain";
 import JourneyMap from "@/components/JourneyMap";
 import RealTimeValue from "@/components/RealTimeValue";
 import AchievementUniverse from "@/components/AchievementUniverse";
+import HireMeOrDont from "@/components/HireMeOrDont";
 import ChooseAdventure from "@/components/ChooseAdventure";
 import FinalSection from "@/components/FinalSection";
 import EasterEgg from "@/components/EasterEgg";
@@ -22,6 +23,7 @@ export default function Index() {
       <RealTimeValue />
       <JourneyMap />
       <AchievementUniverse />
+      <HireMeOrDont />
       <ChooseAdventure />
       <FinalSection />
       <EasterEgg />
