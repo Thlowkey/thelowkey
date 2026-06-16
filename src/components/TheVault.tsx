@@ -1,171 +1,155 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Lock, FileText, X, ExternalLink, ArrowUpRight } from "lucide-react";
+import { Lock, FileText, X, ExternalLink, ArrowUpRight, Mail } from "lucide-react";
 
 export type VaultFile = {
   id: string;
   name: string;
   sector: string;
   url?: string;
-  mission: string;
+  blurb: string;
   problem: string;
-  strategy: string;
-  execution: string;
-  results: string[];
+  solution: string;
+  result: string[];
   tech?: string[];
-  lessons: string;
+  note: string;
 };
 
 const files: VaultFile[] = [
   {
     id: "UGM-001", name: "Ugmonk", sector: "DTC / Premium Goods", url: "https://ugmonk.com",
-    mission: "Position a craft-driven product brand as the definitive minimalist authority online.",
-    problem: "Generic ecommerce template was undermining the brand's premium positioning.",
-    strategy: "Strip everything down to typography, whitespace, and product. Editorial-grade storytelling.",
-    execution: "Custom theme rebuild. Editorial PDPs. Frictionless checkout. Story-led collection pages.",
-    results: ["+62% conversion rate", "+38% AOV", "27% lift in returning customers"],
+    blurb: "Helped a craft brand stop looking like another Shopify template and start looking like the category leader.",
+    problem: "The product was beautiful. The site wasn't. A generic theme was making a premium brand feel mid-tier and killing conversions.",
+    solution: "Stripped the whole thing down to typography, whitespace, and product. Rebuilt the PDPs to tell a story. Cleaned up checkout so nothing got in the way.",
+    result: ["~62% jump in conversion rate", "~38% higher average order value", "More repeat buyers, fewer one-and-done"],
     tech: ["Shopify", "Liquid", "GSAP", "Klaviyo"],
-    lessons: "Restraint is the most expensive design choice — and the most profitable.",
+    note: "When the brand is the product, restraint pays.",
   },
   {
     id: "HAU-002", name: "Haus", sector: "Beverage / DTC", url: "https://drink.haus",
-    mission: "Elevate a craft aperitif brand into a category-defining lifestyle product.",
-    problem: "Beautiful product, low repeat rate. Subscription friction killed LTV.",
-    strategy: "Reframe the brand as a ritual, not a drink. Subscription as membership.",
-    execution: "Editorial homepage, member portal, lifecycle automation, post-purchase rituals.",
-    results: ["+44% subscriber retention", "2.1x LTV", "+58% referral conversions"],
+    blurb: "Turned a craft drink brand into something people actually want to subscribe to — not just try once.",
+    problem: "Great product, weak retention. The subscription flow felt like a chore, so people canceled after one box.",
+    solution: "Reframed the whole thing as a ritual instead of a transaction. Rebuilt the member portal, added lifecycle emails that actually feel personal.",
+    result: ["~44% better subscriber retention", "Roughly 2x LTV", "Big jump in referral conversions"],
     tech: ["Shopify Plus", "Recharge", "Klaviyo", "Framer Motion"],
-    lessons: "Brands aren't bought — they're joined.",
+    note: "People don't subscribe to products. They subscribe to feeling like an insider.",
   },
   {
-    id: "SAS-014", name: "SaaS Startup", sector: "B2B SaaS / Devtools",
-    mission: "Lift trial-to-paid conversion without changing the product.",
-    problem: "Beautiful product, flat sign-ups. Pricing page was a wall, not a decision tool.",
-    strategy: "Rewrote homepage around outcomes. Restructured pricing with social proof and risk reversal.",
-    execution: "Three landing variants tested in parallel. Onboarding rebuilt with progress + early-win moments.",
-    results: ["3.1x trial-to-paid", "−21% CAC", "+44% MRR in 90 days"],
+    id: "SAS-014", name: "B2B SaaS Tool", sector: "SaaS / Devtools",
+    blurb: "Tripled trial-to-paid without touching the product — just the way it was sold.",
+    problem: "Founders had a great tool but the homepage talked about features and the pricing page felt like a wall. Sign-ups were flat.",
+    solution: "Rewrote the homepage around outcomes. Restructured pricing with real social proof and a clean trial → paid path. Tested three variants in parallel.",
+    result: ["~3x trial-to-paid conversion", "~21% lower CAC", "+44% MRR in the first 90 days"],
     tech: ["Next.js", "Stripe", "PostHog", "Vercel"],
-    lessons: "Pricing pages are conversion engines, not menus.",
+    note: "Pricing pages do more selling than your sales team. Treat them that way.",
   },
   {
-    id: "LCL-027", name: "Local Service Co.", sector: "Service / Local",
-    mission: "Turn a referral-dependent business into a self-generating pipeline.",
-    problem: "Website was a digital business card. Mobile load > 6s. No clear booking path.",
-    strategy: "Built a fast, intent-mapped funnel. Booking above the fold. Reviews at decision moments.",
-    execution: "Rebuild on custom stack. SEO-optimized local pages. Automated lead routing to inbox + SMS.",
-    results: ["4.7x monthly bookings", "Top-3 local rankings in 8 weeks", "Premium pricing accepted"],
+    id: "LCL-027", name: "Local Service Business", sector: "Service / Local",
+    blurb: "Took a referral-only business and turned the site into the #1 source of bookings.",
+    problem: "The old site was basically a digital business card. Slow on mobile, no clear way to book, and nowhere near the top of local search.",
+    solution: "Built a fast, intent-mapped funnel. Booking right at the top. Reviews placed at the moments people actually doubt. Local SEO done properly.",
+    result: ["Almost 5x more monthly bookings", "Top-3 local rankings inside 2 months", "Started charging premium and clients said yes"],
     tech: ["Astro", "Tailwind", "Twilio", "Supabase"],
-    lessons: "Local intent buyers don't browse — they decide.",
+    note: "Local buyers don't browse. They decide in seconds.",
   },
   {
-    id: "PRS-009", name: "Personal Brand / Creator", sector: "Authority / Creator Economy",
-    mission: "Convert audience attention into high-ticket client demand.",
-    problem: "Big following, small revenue. Site listed everything, sold nothing.",
-    strategy: "Killed 80% of the site. One ruthless promise. One application path. Scarcity by design.",
-    execution: "Brand refresh, signature framework, application funnel with screening logic.",
-    results: ["10x application volume", "−60% time-to-close", "Average contract value 4x'd"],
+    id: "PRS-009", name: "Personal Brand / Creator", sector: "Authority / Creator",
+    blurb: "Took someone with a big audience and finally turned that attention into real revenue.",
+    problem: "Huge following, tiny income. The site tried to sell everything, so it sold nothing.",
+    solution: "Cut ~80% of the site. Picked one promise, one audience, one offer. Built an application funnel that screens out tire-kickers before they hit the calendar.",
+    result: ["~10x more applications per month", "Sales calls closing way faster", "Average contract value roughly 4x'd"],
     tech: ["Framer", "Typeform", "Notion", "Cal.com"],
-    lessons: "Subtraction is a growth strategy.",
+    note: "Cutting things is a growth strategy. Most people are too scared to try it.",
   },
   {
-    id: "AGY-031", name: "Studio / Agency", sector: "Creative / Services",
-    mission: "Reposition a generalist studio as a category specialist.",
-    problem: "Looked like every other agency. Won on price, lost on prestige.",
-    strategy: "Narrowed positioning to one vertical. Productized the highest-ROI offer.",
-    execution: "New visual identity, longform case studies, inquiry funnel with qualification.",
-    results: ["+170% retainer value", "50% fewer leads, 3x close rate", "Inbound from dream-tier clients"],
+    id: "AGY-031", name: "Creative Studio", sector: "Agency / Services",
+    blurb: "Rebuilt an agency from 'generalist on every brief' into a specialist clients pre-sell themselves on.",
+    problem: "They looked and sounded like 50 other agencies. Won deals on price, lost the good ones on prestige.",
+    solution: "Narrowed positioning to one vertical. Productized the offer that actually made money. Built proper longform case studies and a qualifying inquiry flow.",
+    result: ["+170% on retainer value", "Half the leads, triple the close rate", "Inbound from clients they used to chase"],
     tech: ["Webflow", "GSAP", "HubSpot"],
-    lessons: "When you sound like everyone, you're priced like everyone.",
+    note: "When you sound like everyone, you get paid like everyone.",
   },
   {
-    id: "DTC-044", name: "DTC Jewelry", sector: "Luxury Ecommerce",
-    mission: "Move from boutique to scalable brand without losing soul.",
-    problem: "Beautiful photography buried under a clunky theme. Mobile UX hostile to checkout.",
-    strategy: "Editorial product storytelling, frictionless mobile-first checkout, post-purchase nurture.",
-    execution: "Custom Shopify build, performance optimization, lifecycle email design.",
-    results: ["2.4x mobile CVR", "+52% repeat purchase rate", "Premium positioning held at scale"],
+    id: "DTC-044", name: "DTC Jewelry Brand", sector: "Luxury Ecommerce",
+    blurb: "Moved a boutique jewelry brand from 'pretty Instagram' to actual scalable revenue.",
+    problem: "Stunning photography buried under a clunky theme. Mobile checkout was painful and the bounce rate showed it.",
+    solution: "Custom Shopify build, mobile-first from the ground up. Real product storytelling on PDPs. Post-purchase emails that bring people back.",
+    result: ["~2.4x mobile conversion rate", "+52% repeat purchase rate", "Held premium pricing as they scaled"],
     tech: ["Shopify", "Hydrogen", "Klaviyo"],
-    lessons: "Mobile is the brand. Treat it like the hero.",
+    note: "If your mobile experience is bad, your brand is bad. There's no separating them anymore.",
   },
   {
     id: "FIN-052", name: "Fintech Platform", sector: "Fintech / B2C",
-    mission: "Earn user trust in a category dominated by skepticism.",
-    problem: "Bounce on signup hit 71%. Trust signals were buried.",
-    strategy: "Re-architected onboarding around transparency. Surfaced compliance as a feature.",
-    execution: "Redesigned signup, dashboard, and KYC flow. Live trust badges and security pages.",
-    results: ["−54% signup drop-off", "+38% activated accounts", "NPS +29 in 60 days"],
+    blurb: "Took a fintech with a brutal signup drop-off and made onboarding feel like the safest part of the product.",
+    problem: "71% of users were bouncing during signup. Trust signals were buried way below the fold.",
+    solution: "Rebuilt the signup and KYC flow around transparency. Showed compliance as a feature, not a hurdle. Live trust badges where they actually mattered.",
+    result: ["~54% less drop-off during signup", "+38% activated accounts", "NPS up ~29 points in 60 days"],
     tech: ["React", "Plaid", "Auth0", "Vercel"],
-    lessons: "Trust isn't a section. It's an experience.",
+    note: "Trust isn't a page on your site. It's a feeling people get the second they land.",
   },
   {
-    id: "EDU-061", name: "EdTech / Cohort Course", sector: "Education / B2C",
-    mission: "Sell out a $2k cohort without paid ads.",
-    problem: "Launch page converted at 0.8%. Long, generic, no urgency.",
-    strategy: "Storytelling-first sales page. Outcome-based testimonials. Tiered cohort scarcity.",
-    execution: "New page, application gate, founder-led email sequence, waitlist gamification.",
-    results: ["Sold out in 9 days", "+340% application volume", "$180k launch revenue"],
+    id: "EDU-061", name: "Cohort Course Launch", sector: "EdTech / Course",
+    blurb: "Sold out a $2k cohort with zero ad spend — just a better story.",
+    problem: "Old launch page converted at under 1%. It was long, generic, and had no real urgency.",
+    solution: "New page built around the student outcome, not the curriculum. Outcome-based testimonials. Tiered cohort scarcity that wasn't fake.",
+    result: ["Sold out in 9 days", "~3.4x more applications", "~$180k launch revenue"],
     tech: ["Webflow", "ConvertKit", "Circle"],
-    lessons: "People don't buy courses — they buy futures.",
+    note: "People don't buy your course. They buy the version of themselves they think it'll create.",
   },
   {
-    id: "HLT-073", name: "Wellness Brand", sector: "Health & Wellness DTC",
-    mission: "Stand out in a saturated supplements category.",
-    problem: "Generic claims, low trust, weak email revenue.",
-    strategy: "Founder-led storytelling, science-backed proof, ritual-based subscription framing.",
-    execution: "Brand revamp, subscription flow, content engine for SEO + email.",
-    results: ["+91% subscription conversion", "+2.7x email revenue", "+33% AOV"],
+    id: "HLT-073", name: "Wellness / Supplements", sector: "Health DTC",
+    blurb: "Helped a wellness brand stop blending into a category where everyone says the same thing.",
+    problem: "Generic claims, low trust, email revenue almost flat.",
+    solution: "Brought the founder forward as the brand. Built the science-backed proof into the experience. Reframed subscriptions as a daily ritual.",
+    result: ["~91% better subscription conversion", "~2.7x email revenue", "+33% AOV"],
     tech: ["Shopify", "Recharge", "Klaviyo", "Sanity"],
-    lessons: "In wellness, who you are sells more than what you sell.",
+    note: "In wellness, the founder's face sells more than any ingredient list.",
   },
   {
     id: "REL-088", name: "Boutique Real Estate", sector: "Real Estate / Luxury",
-    mission: "Generate inbound leads for $2M+ listings.",
-    problem: "Listings buried in MLS feeds. No way to filter for premium buyers.",
-    strategy: "Editorial property pages. Buyer intent funnel. Concierge-style inquiry flow.",
-    execution: "Custom CMS, cinematic galleries, automated buyer qualification.",
-    results: ["12 qualified inquiries / month", "Avg listing time −40%", "Two record-price sales"],
+    blurb: "Built an inbound machine for $2M+ listings that doesn't feel like every other Zillow clone.",
+    problem: "Beautiful listings were drowning inside MLS feeds. No way to filter for actual premium buyers.",
+    solution: "Editorial property pages with real story. A buyer-intent funnel. Concierge-style inquiry form instead of the usual contact bait.",
+    result: ["~12 qualified inquiries per month", "Avg time on market down ~40%", "Two record-price sales in 6 months"],
     tech: ["Next.js", "Sanity", "Mapbox", "Resend"],
-    lessons: "Luxury sells through silence, not noise.",
+    note: "Luxury sells through silence. The less noise, the higher the price.",
   },
   {
     id: "MED-094", name: "Niche Media Brand", sector: "Media / Newsletter",
-    mission: "Turn a free newsletter into a paid membership business.",
-    problem: "30k free subscribers, $0 in product revenue.",
-    strategy: "Productized the archive. Members-only briefings. Tiered access with status signaling.",
-    execution: "Membership site, paywall, member directory, monthly live sessions.",
-    results: ["$24k MRR in 90 days", "8% free→paid", "92% annual retention"],
+    blurb: "Took a free newsletter with 30k readers and turned it into a real membership business.",
+    problem: "Big audience, zero product revenue. The archive was just sitting there.",
+    solution: "Productized the archive. Built members-only briefings. Added tiers with real status — directory access, live sessions, early calls.",
+    result: ["$24k MRR in 90 days", "~8% free → paid conversion", "92% annual retention"],
     tech: ["Ghost", "Stripe", "Memberstack"],
-    lessons: "Status is a feature.",
+    note: "Status is a feature. Don't be afraid to sell it.",
   },
   {
     id: "RES-102", name: "Restaurant Group", sector: "Hospitality",
-    mission: "Drive direct reservations and reduce third-party platform dependence.",
-    problem: "70% of bookings via OpenTable. High fees, no data ownership.",
-    strategy: "Branded reservation experience. Loyalty layer. SEO for high-intent local queries.",
-    execution: "Custom booking flow, automated SMS, local SEO push.",
-    results: ["+58% direct reservations", "−$3.2k/mo platform fees", "+22% repeat diners"],
+    blurb: "Got a restaurant group off the OpenTable hamster wheel and back to owning their bookings.",
+    problem: "~70% of reservations were going through third-party platforms. Eating margin, owning no customer data.",
+    solution: "Built a branded reservation flow on their own site. Added a loyalty layer. Local SEO push for high-intent queries like 'best [cuisine] near me'.",
+    result: ["+58% direct reservations", "Cut ~$3.2k/mo in platform fees", "+22% repeat diners"],
     tech: ["Next.js", "Resend", "Twilio", "SQLite"],
-    lessons: "Owning the booking is owning the relationship.",
+    note: "Whoever owns the booking owns the relationship.",
   },
   {
-    id: "B2B-115", name: "B2B Manufacturing", sector: "Industrial / B2B",
-    mission: "Modernize a 30-year-old industrial brand without alienating its base.",
-    problem: "Quote-only sales. 90s site. No analytics. Sales cycle 4+ months.",
-    strategy: "Spec-first product pages. Self-serve quote builder. Sales enablement content.",
-    execution: "CMS migration, quote calculator, distributor portal.",
-    results: ["+260% inbound quote requests", "Sales cycle cut to 6 weeks", "Distributor adoption 84%"],
+    id: "B2B-115", name: "B2B Manufacturer", sector: "Industrial / B2B",
+    blurb: "Modernized a 30-year-old industrial brand without making it feel unrecognizable to its base.",
+    problem: "Quote-only sales, a 90s site, no analytics, and a 4+ month sales cycle. Distributors were frustrated.",
+    solution: "Spec-first product pages built for engineers. A self-serve quote builder. A simple distributor portal that didn't try to do too much.",
+    result: ["+260% inbound quote requests", "Sales cycle cut to ~6 weeks", "84% distributor adoption"],
     tech: ["Next.js", "Sanity", "Stripe", "Salesforce"],
-    lessons: "Heritage brands win when they translate, not when they reinvent.",
+    note: "Heritage brands win by translating, not reinventing.",
   },
   {
     id: "ART-127", name: "Independent Artist", sector: "Art / Direct Sales",
-    mission: "Build a direct-to-collector channel that bypasses galleries.",
-    problem: "70% of sales lost to gallery commissions. No CRM, no list.",
-    strategy: "Drop-based release model. Collector list as core asset. Cinematic product film.",
-    execution: "Custom drop calendar, collector application, video-led PDPs.",
-    results: ["Drop sold out in 14 minutes", "Margin +70%", "Collector waitlist 1,200 deep"],
+    blurb: "Helped an artist bypass galleries and sell directly to collectors at way better margins.",
+    problem: "Galleries were taking ~70% commission. No CRM, no collector list, no real direct channel.",
+    solution: "Built a drop-based release model. Treated the collector list as the main asset. Cinematic product films instead of flat photos.",
+    result: ["Drop sold out in 14 minutes", "Margin up ~70%", "Collector waitlist 1,200+ deep"],
     tech: ["Shopify", "Klaviyo", "Mux", "Cloudflare"],
-    lessons: "Scarcity is a love letter to your best buyers.",
+    note: "Scarcity, done right, is a love letter to your best buyers.",
   },
 ];
 
@@ -180,9 +164,11 @@ export default function TheVault() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mb-12">
           <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">// 03 — The Vault</div>
           <h2 className="text-4xl md:text-6xl font-bold leading-[1.05] mb-6">
-            Classified <span className="serif-italic text-gradient-cyan">case files.</span>
+            Selected <span className="serif-italic text-gradient-cyan">case files.</span>
           </h2>
-          <p className="text-muted-foreground md:text-lg">Fifteen real engagements. Open one to read the full investigation — mission, diagnosis, execution, outcome.</p>
+          <p className="text-muted-foreground md:text-lg">
+            Fifteen real projects. Click any card to read the full breakdown — what was broken, what I did, what changed.
+          </p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -196,14 +182,15 @@ export default function TheVault() {
               onClick={() => setOpen(f)}
               className="group relative glass rounded-xl p-6 text-left hover:border-primary/40 hover:glow-soft transition-all overflow-hidden"
             >
-              <div className="flex items-start justify-between mb-8">
+              <div className="flex items-start justify-between mb-6">
                 <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">CASE / {f.id}</div>
                 <Lock size={14} className="text-muted-foreground group-hover:text-primary transition" />
               </div>
               <div className="text-xl font-bold mb-1">{f.name}</div>
-              <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-6">{f.sector}</div>
+              <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-4">{f.sector}</div>
+              <p className="text-sm text-foreground/70 leading-relaxed mb-6 line-clamp-3">{f.blurb}</p>
               <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-primary opacity-70 group-hover:opacity-100 transition">
-                <FileText size={12} /> Open file <ArrowUpRight size={12} className="ml-auto" />
+                <FileText size={12} /> Open case <ArrowUpRight size={12} className="ml-auto" />
               </div>
               <div className="absolute -bottom-12 -right-12 w-32 h-32 rounded-full bg-primary/5 blur-2xl group-hover:bg-primary/15 transition" />
             </motion.button>
@@ -220,42 +207,47 @@ export default function TheVault() {
           >
             <motion.div
               initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 40, opacity: 0 }}
-              onClick={e => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
               className="glass-strong rounded-t-2xl md:rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-y-auto"
             >
               <div className="sticky top-0 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur z-10">
-                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">CASE / {open.id} — DECLASSIFIED</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">CASE / {open.id}</div>
                 <button onClick={() => setOpen(null)} className="text-muted-foreground hover:text-foreground"><X size={18} /></button>
               </div>
               <div className="p-6 md:p-10">
                 <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-2">{open.sector}</div>
                 <h3 className="text-3xl md:text-4xl font-bold mb-4">{open.name}</h3>
-                {open.url && (
-                  <a href={open.url} target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider hover:glow-cyan transition">
-                    Visit Project <ExternalLink size={12} />
+                <p className="text-foreground/80 text-lg leading-relaxed mb-6">{open.blurb}</p>
+                <div className="flex flex-wrap gap-3 mb-8">
+                  {open.url && (
+                    <a href={open.url} target="_blank" rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider hover:glow-cyan transition">
+                      Visit project <ExternalLink size={12} />
+                    </a>
+                  )}
+                  <a href={`mailto:alwaysonalowkey@gmail.com?subject=${encodeURIComponent(`New Project Inquiry — inspired by ${open.name}`)}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-mono uppercase tracking-wider hover:border-primary/40 transition">
+                    <Mail size={12} /> Start something like this
                   </a>
-                )}
+                </div>
 
-                <Field label="Mission" body={<p>{open.mission}</p>} />
                 <Field label="Problem" body={<p>{open.problem}</p>} />
-                <Field label="Strategy" body={<p>{open.strategy}</p>} />
-                <Field label="Execution" body={<p>{open.execution}</p>} />
-                <Field label="Results" body={
+                <Field label="What I did" body={<p>{open.solution}</p>} />
+                <Field label="Result" body={
                   <ul className="space-y-2">
-                    {open.results.map((r, i) => <li key={i} className="flex gap-3"><span className="text-primary font-mono">→</span>{r}</li>)}
+                    {open.result.map((r, i) => <li key={i} className="flex gap-3"><span className="text-primary font-mono">→</span>{r}</li>)}
                   </ul>
                 } />
                 {open.tech && open.tech.length > 0 && (
-                  <Field label="Technologies" body={
+                  <Field label="Stack" body={
                     <div className="flex flex-wrap gap-2">
-                      {open.tech.map(t => (
+                      {open.tech.map((t) => (
                         <span key={t} className="px-3 py-1 rounded-full glass font-mono text-[10px] uppercase tracking-wider text-foreground/80">{t}</span>
                       ))}
                     </div>
                   } />
                 )}
-                <Field label="Lessons" body={<p className="serif-italic text-lg text-foreground/80">"{open.lessons}"</p>} last />
+                <Field label="Note" body={<p className="serif-italic text-lg text-foreground/80">"{open.note}"</p>} last />
               </div>
             </motion.div>
           </motion.div>

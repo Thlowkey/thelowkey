@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <div className="hidden sm:block"><TimezoneClock /></div>
           <LanguageSwitcher />
-          <a href="/#final" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-[11px] font-mono uppercase tracking-wider hover:glow-cyan transition">
+          <a href="mailto:alwaysonalowkey@gmail.com?subject=New%20Project%20Inquiry" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-[11px] font-mono uppercase tracking-wider hover:glow-cyan transition">
             <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
             {t("nav.initiate")}
           </a>
@@ -75,7 +75,7 @@ export default function Navbar() {
               </a>
             ))}
             <div className="sm:hidden pt-2"><TimezoneClock /></div>
-            <a href="/#final" onClick={() => setOpen(false)} className="mt-2 px-4 py-3 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider text-center">
+            <a href="mailto:alwaysonalowkey@gmail.com?subject=New%20Project%20Inquiry" onClick={() => setOpen(false)} className="mt-2 px-4 py-3 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider text-center">
               {t("nav.initiate")}
             </a>
           </div>

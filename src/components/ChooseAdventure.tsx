@@ -66,7 +66,7 @@ export default function ChooseAdventure() {
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-border/60">
                 <div className="text-sm text-muted-foreground"><span className="serif-italic">"{picked.case}"</span></div>
-                <a href="#final" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider hover:glow-cyan transition shrink-0">
+                <a href={`mailto:alwaysonalowkey@gmail.com?subject=${encodeURIComponent("New Project Inquiry")}&body=${encodeURIComponent(`Hey Low Key,\n\nI want to run this play: ${picked.label}\n\nGoal:\nBudget:\nTimeline:\nSite / references:\n`)}`} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider hover:glow-cyan transition shrink-0">
                   Run this play <ArrowRight size={14} />
                 </a>
               </div>
