@@ -54,7 +54,7 @@ export default function EasterEgg() {
             >
               <div className="flex items-center justify-between px-6 py-4 border-b border-border/60 bg-background/60">
                 <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
-                  <KeyRound size={12} /> // Vault.unlocked — Curious humans only
+                  <KeyRound size={12} /> Vault.unlocked — Curious humans only
                 </div>
                 <button onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground"><X size={18} /></button>
               </div>
