@@ -53,10 +53,10 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row items-start gap-4 mb-20"
           >
             <a
-              href="#contact"
+              href="mailto:alwaysonalowkey@gmail.com?subject=New%20Project%20Inquiry"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all tracking-wide"
             >
-              Work With Me <ArrowRight size={18} />
+              Work with me <ArrowRight size={18} />
             </a>
             <a
               href="#results"
