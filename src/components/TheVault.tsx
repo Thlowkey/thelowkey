@@ -162,7 +162,7 @@ export default function TheVault() {
     <section id="vault" className="section-padding relative">
       <div className="container mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mb-12">
-          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">// 03 — The Vault</div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">03 — The Vault</div>
           <h2 className="text-4xl md:text-6xl font-bold leading-[1.05] mb-6">
             Selected <span className="serif-italic text-gradient-cyan">case files.</span>
           </h2>
@@ -183,7 +183,7 @@ export default function TheVault() {
               className="group relative glass rounded-xl p-6 text-left hover:border-primary/40 hover:glow-soft transition-all overflow-hidden"
             >
               <div className="flex items-start justify-between mb-6">
-                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">CASE / {f.id}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">CASE — {f.id}</div>
                 <Lock size={14} className="text-muted-foreground group-hover:text-primary transition" />
               </div>
               <div className="text-xl font-bold mb-1">{f.name}</div>
@@ -211,7 +211,7 @@ export default function TheVault() {
               className="glass-strong rounded-t-2xl md:rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-y-auto"
             >
               <div className="sticky top-0 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur z-10">
-                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">CASE / {open.id}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">CASE — {open.id}</div>
                 <button onClick={() => setOpen(null)} className="text-muted-foreground hover:text-foreground"><X size={18} /></button>
               </div>
               <div className="p-6 md:p-10">
@@ -260,7 +260,7 @@ export default function TheVault() {
 function Field({ label, body, last = false }: { label: string; body: React.ReactNode; last?: boolean }) {
   return (
     <div className={`py-5 ${!last ? "border-b border-border/40" : ""}`}>
-      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-2">// {label}</div>
+      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-2">{label}</div>
       <div className="text-foreground/90 leading-relaxed">{body}</div>
     </div>
   );

@@ -40,7 +40,7 @@ export default function VisitorIntelligence() {
               <button onClick={() => setOpen(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition" aria-label="Skip">
                 <X size={18} />
               </button>
-              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-3">// Identify the visitor</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-3">Identify the visitor</div>
               <h2 className="text-2xl md:text-4xl font-bold mb-2">Who are you?</h2>
               <p className="text-sm text-muted-foreground mb-6">The system tunes itself to you. Pick the closest fit.</p>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
@@ -86,7 +86,7 @@ export default function VisitorIntelligence() {
               initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
               className="glass rounded-xl p-4 md:p-5 flex flex-col md:flex-row md:items-center gap-3 md:gap-5"
             >
-              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary shrink-0">// Calibrated for {persona.label}</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary shrink-0">Calibrated for {persona.label}</div>
               <div className="text-sm text-foreground/80 flex-1">{persona.focus}</div>
               <a href="#roast" className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-primary hover:text-primary/70 transition shrink-0">
                 Start with a roast <ArrowRight size={12} />

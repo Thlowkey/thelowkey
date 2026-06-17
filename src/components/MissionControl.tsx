@@ -48,9 +48,9 @@ export default function MissionControl() {
         >
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span>SYS.STATUS / ONLINE</span>
+            <span>SYS.STATUS — ONLINE</span>
           </div>
-          <div className="hidden md:block">NODE / LOW-KEY.OS</div>
+          <div className="hidden md:block">NODE — LOW-KEY.OS</div>
           <div>{time.toUTCString().slice(17, 25)} UTC</div>
         </motion.div>
 
@@ -62,7 +62,7 @@ export default function MissionControl() {
             transition={{ delay: 0.2 }}
             className="font-mono text-[11px] uppercase tracking-[0.4em] text-primary mb-8"
           >
-            // Enter the Mind of Low Key
+            Enter the Mind of Low Key
           </motion.p>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8">
@@ -97,7 +97,7 @@ export default function MissionControl() {
           {stats.map((s, i) => (
             <div key={s.label} className="p-6 md:p-8 bg-background/40 relative group hover:bg-primary/5 transition">
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3">
-                /// {String(i + 1).padStart(2, "0")} — {s.label}
+                {String(i + 1).padStart(2, "0")} — {s.label}
               </div>
               <div className="text-3xl md:text-5xl font-bold text-foreground tabular-nums">
                 <Counter end={s.value} prefix={s.prefix} suffix={s.suffix} />

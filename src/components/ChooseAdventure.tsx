@@ -24,7 +24,7 @@ export default function ChooseAdventure() {
     <section className="section-padding relative">
       <div className="container mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mb-16">
-          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">// 07 — Choose Your Adventure</div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">07 — Choose Your Adventure</div>
           <h2 className="text-4xl md:text-6xl font-bold leading-[1.05] mb-6">
             What's the <span className="serif-italic text-gradient-cyan">real bottleneck?</span>
           </h2>
@@ -55,7 +55,7 @@ export default function ChooseAdventure() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
               className="glass-strong rounded-2xl p-8 md:p-10"
             >
-              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-4">// Custom plan for: {picked.label}</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-4">Custom plan for — {picked.label}</div>
               <div className="space-y-4 mb-8">
                 {picked.plan.map((s, i) => (
                   <div key={i} className="flex gap-4">

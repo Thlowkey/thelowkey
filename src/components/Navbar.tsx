@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import lowkeyLogo from "@/assets/lowkey-logo.png";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -12,11 +12,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const nav = [
-    { label: t("nav.mission"), href: "/#mission" },
-    { label: t("nav.simulator"), href: "/#simulator" },
+    { label: t("nav.services"), href: "/services", route: true as const },
     { label: t("nav.vault"), href: "/#vault" },
-    { label: t("nav.brain"), href: "/#brain" },
-    { label: t("nav.journey"), href: "/#journey" },
+    { label: t("nav.insights"), href: "/#insights" },
     { label: t("nav.experience"), href: "/experience", route: true as const },
   ];
 
@@ -34,7 +32,7 @@ export default function Navbar() {
             <img src={lowkeyLogo} alt="Low Key" className="h-8 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition" />
             <div className="absolute inset-0 bg-primary/30 blur-xl opacity-0 group-hover:opacity-60 transition" />
           </div>
-          <span className="font-mono text-[10px] tracking-[0.3em] text-primary/70 uppercase hidden sm:inline">// OS_v5.0</span>
+          <span className="font-mono text-[10px] tracking-[0.3em] text-primary/70 uppercase hidden sm:inline">LOW-KEY.OS</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1 glass rounded-full px-2 py-1.5">
@@ -47,12 +45,21 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
+          <a
+            href="mailto:alwaysonalowkey@gmail.com?subject=New%20Portfolio%20Inquiry"
+            className="px-4 py-1.5 text-xs font-mono uppercase tracking-wider text-primary hover:bg-primary/10 rounded-full transition inline-flex items-center gap-1.5"
+          >
+            <Mail size={11} /> {t("nav.contact")}
+          </a>
         </nav>
 
         <div className="flex items-center gap-2">
           <div className="hidden sm:block"><TimezoneClock /></div>
           <LanguageSwitcher />
-          <a href="mailto:alwaysonalowkey@gmail.com?subject=New%20Project%20Inquiry" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-[11px] font-mono uppercase tracking-wider hover:glow-cyan transition">
+          <a
+            href="mailto:alwaysonalowkey@gmail.com?subject=New%20Project%20Inquiry"
+            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-[11px] font-mono uppercase tracking-wider hover:glow-cyan transition"
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
             {t("nav.initiate")}
           </a>
@@ -74,8 +81,19 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
+            <a
+              href="mailto:alwaysonalowkey@gmail.com?subject=New%20Portfolio%20Inquiry"
+              onClick={() => setOpen(false)}
+              className="px-4 py-3 font-mono text-xs uppercase tracking-wider text-primary inline-flex items-center gap-2"
+            >
+              <Mail size={12} /> {t("nav.contact")}
+            </a>
             <div className="sm:hidden pt-2"><TimezoneClock /></div>
-            <a href="mailto:alwaysonalowkey@gmail.com?subject=New%20Project%20Inquiry" onClick={() => setOpen(false)} className="mt-2 px-4 py-3 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider text-center">
+            <a
+              href="mailto:alwaysonalowkey@gmail.com?subject=New%20Project%20Inquiry"
+              onClick={() => setOpen(false)}
+              className="mt-2 px-4 py-3 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider text-center"
+            >
               {t("nav.initiate")}
             </a>
           </div>

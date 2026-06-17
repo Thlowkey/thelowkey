@@ -40,7 +40,7 @@ export default function FinalSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[160px] pointer-events-none" />
       <div className="container mx-auto relative">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto text-center mb-12">
-          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-6">// 08 — Initiate</div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-6">08 — Initiate</div>
           <h2 className="text-4xl md:text-6xl font-bold leading-[1.02] mb-6">
             Choose your <span className="serif-italic text-gradient-cyan">next move.</span>
           </h2>
@@ -71,7 +71,7 @@ export default function FinalSection() {
         </div>
 
         <div className="mt-10 text-center font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-          Or just email me directly →{" "}
+          Or email me directly:{" "}
           <a href={`mailto:${EMAIL}`} className="text-primary hover:underline normal-case tracking-normal">{EMAIL}</a>
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function AchievementUniverse() {
       <div className="absolute inset-0 grid-bg opacity-40" />
       <div className="container mx-auto relative">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mb-16">
-          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">// 06 — Achievement Universe</div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">06 — Achievement Universe</div>
           <h2 className="text-4xl md:text-6xl font-bold leading-[1.05] mb-6">
             Numbers are <span className="serif-italic text-gradient-cyan">orbits.</span>
           </h2>
@@ -72,7 +72,7 @@ export default function AchievementUniverse() {
             >
               <button onClick={() => setOpen(null)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"><X size={18} /></button>
               <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${open.color} mb-6 mx-auto glow-soft`} />
-              <div className="text-center font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-2">// {open.label}</div>
+              <div className="text-center font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-2">{open.label}</div>
               <div className="text-center text-4xl font-bold mb-6">{open.value}</div>
               <p className="text-center text-foreground/80 leading-relaxed">{open.story}</p>
             </motion.div>

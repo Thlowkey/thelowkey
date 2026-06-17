@@ -60,7 +60,7 @@ export default function FutureSimulator() {
     <section id="simulator" className="section-padding relative noise">
       <div className="container mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mb-16">
-          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">// 02 — Client Future Simulator</div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">02 — Client Future Simulator</div>
           <h2 className="text-4xl md:text-6xl font-bold leading-[1.05] mb-6">
             See your business <span className="serif-italic text-gradient-cyan">three moves ahead.</span>
           </h2>
