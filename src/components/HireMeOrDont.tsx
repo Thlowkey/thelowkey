@@ -27,7 +27,7 @@ export default function HireMeOrDont() {
           viewport={{ once: true }}
           className="max-w-3xl mb-12"
         >
-          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">// 07 — Calibration</div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">07 — Calibration</div>
           <h2 className="text-3xl md:text-5xl font-bold leading-[1.05]">
             Not everyone should <span className="serif-italic text-gradient-cyan">work with me.</span>
           </h2>
@@ -41,7 +41,7 @@ export default function HireMeOrDont() {
             className="glass-strong rounded-2xl p-8 relative overflow-hidden"
           >
             <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-primary/10 blur-3xl" />
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-6">// Work with me if</div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-6">Work with me if</div>
             <ul className="space-y-3">
               {fit.map((f) => (
                 <li key={f} className="flex items-start gap-3">
@@ -60,7 +60,7 @@ export default function HireMeOrDont() {
             viewport={{ once: true }}
             className="glass rounded-2xl p-8 relative overflow-hidden"
           >
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-6">// Don't work with me if</div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-6">Not the right fit if</div>
             <ul className="space-y-3">
               {notFit.map((f) => (
                 <li key={f} className="flex items-start gap-3">

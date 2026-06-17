@@ -88,7 +88,7 @@ export default function RoastLab() {
     <section id="roast" className="section-padding relative">
       <div className="container mx-auto">
         <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mb-10">
-          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">// 02 — Diagnostic Lab</div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">02 — Diagnostic Lab</div>
           <h2 className="text-3xl md:text-5xl font-bold leading-[1.05] mb-3">
             Roast my <span className="serif-italic text-gradient-cyan">website.</span>
           </h2>
@@ -145,7 +145,7 @@ export default function RoastLab() {
 
                 {!unlocked ? (
                   <motion.form initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} onSubmit={unlock} className="glass-strong rounded-xl p-6 mt-6">
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-3">// Unlock the deeper analysis</div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-3">Unlock the deeper analysis</div>
                     <p className="text-sm text-muted-foreground mb-4">I'll personally review your site and send back a tactical breakdown — what to fix first, what to test, and where the revenue is hiding.</p>
                     <div className="grid sm:grid-cols-3 gap-2 mb-3">
                       <input value={deep.name} onChange={e => setDeep({ ...deep, name: e.target.value })} placeholder="Name" className="bg-background/60 border border-border/60 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-primary/60" />
@@ -157,7 +157,7 @@ export default function RoastLab() {
                     </button>
                   </motion.form>
                 ) : (
-                  <div className="glass rounded-xl p-6 text-center font-mono text-sm text-primary">// Transmission received. Expect a personal response within 48 hours.</div>
+                  <div className="glass rounded-xl p-6 text-center font-mono text-sm text-primary">Transmission received. Expect a personal response within 48 hours.</div>
                 )}
               </motion.div>
             )}

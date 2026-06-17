@@ -48,7 +48,7 @@ export default function LiveBrain() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[140px] pointer-events-none" />
       <div className="container mx-auto relative">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mb-12">
-          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">// 04 — Talk to Low Key</div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">04 — Talk to Low Key</div>
           <h2 className="text-4xl md:text-6xl font-bold leading-[1.05] mb-6">
             Ask me anything. <span className="serif-italic text-gradient-cyan">I'll reply.</span>
           </h2>

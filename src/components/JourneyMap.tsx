@@ -56,7 +56,7 @@ export default function JourneyMap() {
       <div className="container mx-auto">
         <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div className="max-w-2xl">
-            <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">// 05 — Mission Roadmap</div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">05 — Mission Roadmap</div>
             <h2 className="text-3xl md:text-5xl font-bold leading-[1.05]">
               Thirty days. <span className="serif-italic text-gradient-cyan">One trajectory.</span>
             </h2>
