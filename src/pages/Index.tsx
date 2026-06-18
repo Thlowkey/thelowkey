@@ -4,7 +4,6 @@ import MissionControl from "@/components/MissionControl";
 import RoastLab from "@/components/RoastLab";
 import FutureSimulator from "@/components/FutureSimulator";
 import TheVault from "@/components/TheVault";
-import FeaturedInspiration from "@/components/FeaturedInspiration";
 import LiveBrain from "@/components/LiveBrain";
 import JourneyMap from "@/components/JourneyMap";
 import InsightsBlog from "@/components/InsightsBlog";
@@ -26,7 +25,6 @@ export default function Index() {
       <RoastLab />
       <FutureSimulator />
       <TheVault />
-      <FeaturedInspiration />
       <LiveBrain />
       <RealTimeValue />
       <JourneyMap />
