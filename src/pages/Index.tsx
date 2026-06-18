@@ -25,7 +25,6 @@ export default function Index() {
       <RoastLab />
       <FutureSimulator />
       <TheVault />
-      <FeaturedInspiration />
       <LiveBrain />
       <RealTimeValue />
       <JourneyMap />
