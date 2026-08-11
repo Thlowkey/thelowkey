@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ExternalLink, TrendingUp, BarChart3, DollarSign } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 type Result = {
   title: string;
@@ -48,6 +49,7 @@ export default function Experience() {
 
   return (
     <div className="min-h-screen bg-background noise">
+      <Seo title="Experience & Results — Low Key" description="Real outcomes across rankings, traffic and sales: search visibility wins, organic growth curves and revenue lifts from conversion-focused design work." path="/experience" />
       <Navbar />
 
       <section className="section-padding pt-32">

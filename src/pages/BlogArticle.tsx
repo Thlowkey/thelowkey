@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { getArticle } from "@/data/articles";
 
 export default function BlogArticle() {
@@ -12,6 +13,12 @@ export default function BlogArticle() {
 
   return (
     <div className="min-h-screen bg-background noise">
+      <Seo
+        title={`${article.title.slice(0, 45)} — Low Key`}
+        description={article.intro.slice(0, 155)}
+        path={`/blog/${article.slug}`}
+        type="article"
+      />
       <Navbar />
       <main className="pt-28 pb-20">
         <article className="container mx-auto px-4 md:px-8 max-w-3xl">

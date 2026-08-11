@@ -16,10 +16,16 @@ import ContactSection from "@/components/ContactSection";
 import FinalSection from "@/components/FinalSection";
 import EasterEgg from "@/components/EasterEgg";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 export default function Index() {
   return (
     <div className="min-h-screen bg-background noise">
+      <Seo
+        title="Low Key — Digital Growth Architect Portfolio"
+        description="Enter the mind of Low Key: an interactive OS-style portfolio with an AI roast lab, client future simulator, case-file vault and live strategy brain for growth brands."
+        path="/"
+      />
       <Navbar />
       <VisitorIntelligence />
       <MissionControl />
