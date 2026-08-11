@@ -143,7 +143,7 @@ export default function ClientTestimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.05 * (i + 1) }}
               className={`group glass rounded-2xl p-6 md:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 ${
-                i === 3 ? "lg:col-span-2" : ""
+                i === 3 ? "lg:col-span-2" : i === 4 ? "lg:col-span-3" : ""
               }`}
             >
               <div>

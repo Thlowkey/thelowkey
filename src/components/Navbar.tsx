@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-import lowkeyLogoAsset from "@/assets/lowkey-wordmark.png.asset.json";
+import lowkeyLogo from "@/assets/lowkey-logo.png";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import TimezoneClock from "@/components/TimezoneClock";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between py-3 px-4 md:px-8 gap-3">
         <Link to="/" className="flex items-center gap-3 group shrink-0">
           <div className="relative">
-            <img src={lowkeyLogoAsset.url} alt="Low Key" className="h-8 w-auto opacity-95 group-hover:opacity-100 transition" />
+            <img src={lowkeyLogo} alt="Low Key" className="h-8 w-auto opacity-95 group-hover:opacity-100 transition" />
             <div className="absolute inset-0 bg-primary/30 blur-xl opacity-0 group-hover:opacity-60 transition" />
           </div>
           <span className="font-mono text-[10px] tracking-[0.3em] text-primary/70 uppercase hidden sm:inline">LOW-KEY.OS</span>

@@ -1,4 +1,4 @@
-import lowkeyLogoAsset from "@/assets/lowkey-wordmark.png.asset.json";
+import lowkeyLogo from "@/assets/lowkey-logo.png";
 
 export default function Footer() {
   return (
@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <img src={lowkeyLogoAsset.url} alt="Low Key" className="h-7 w-auto opacity-90" />
+            <img src={lowkeyLogo} alt="Low Key" className="h-7 w-auto opacity-90" />
             <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Low Key — Digital Growth Architect</div>
           </div>
           <div className="flex flex-col md:flex-row gap-3 md:items-center text-sm text-muted-foreground">
