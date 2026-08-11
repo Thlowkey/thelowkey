@@ -11,6 +11,7 @@ import RealTimeValue from "@/components/RealTimeValue";
 import AchievementUniverse from "@/components/AchievementUniverse";
 import HireMeOrDont from "@/components/HireMeOrDont";
 import ChooseAdventure from "@/components/ChooseAdventure";
+import ClientTestimonials from "@/components/ClientTestimonials";
 import ContactSection from "@/components/ContactSection";
 import FinalSection from "@/components/FinalSection";
 import EasterEgg from "@/components/EasterEgg";
@@ -31,6 +32,7 @@ export default function Index() {
       <InsightsBlog />
       <AchievementUniverse />
       <HireMeOrDont />
+      <ClientTestimonials />
       <ChooseAdventure />
       <ContactSection />
       <FinalSection />
