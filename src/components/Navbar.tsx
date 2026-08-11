@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-import lowkeyLogo from "@/assets/lowkey-logo.png";
+import lowkeyLogoAsset from "@/assets/lowkey-wordmark.png.asset.json";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import TimezoneClock from "@/components/TimezoneClock";
 import { useLanguage } from "@/contexts/LanguageContext";
