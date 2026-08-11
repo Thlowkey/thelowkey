@@ -121,7 +121,7 @@ export default function LiveBrain() {
               {!loading && history.length > 0 && history[history.length - 1].role === "assistant" && (
                 <div className="pt-2">
                   <a
-                    href="mailto:alwaysonalowkey@gmail.com?subject=New%20Project%20Inquiry"
+                    href="mailto:hello@uselowkey.online?subject=New%20Project%20Inquiry"
                     className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-primary hover:underline"
                   >
                     → Continue this over email

@@ -23,7 +23,7 @@ const CtaSection = () => {
             Limited availability — serious inquiries only
           </p>
           <a
-            href="mailto:alwaysonalowkey@gmail.com?subject=New%20Project%20Inquiry"
+            href="mailto:hello@uselowkey.online?subject=New%20Project%20Inquiry"
             className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all tracking-wide text-lg"
           >
             Apply to work with me <ArrowRight size={20} />

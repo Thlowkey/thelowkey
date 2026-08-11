@@ -105,7 +105,7 @@ export default function Services() {
               Send a short note about your business and what you want to grow. I'll come back with a clear recommendation — no pitch deck, no fluff.
             </p>
             <a
-              href="mailto:alwaysonalowkey@gmail.com?subject=New%20Project%20Inquiry"
+              href="mailto:hello@uselowkey.online?subject=New%20Project%20Inquiry"
               className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider hover:glow-cyan transition"
             >
               Start a conversation <ArrowRight size={14} />
