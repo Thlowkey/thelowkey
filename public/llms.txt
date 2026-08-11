@@ -1,0 +1,15 @@
+# Low Key
+
+> Interactive OS-style portfolio of Low Key, a digital growth architect working on conversion, UI/UX, SEO, ads, email and brand strategy.
+
+Low Key is an individual digital growth architect (not an agency). The site is a single interactive experience with an AI roast lab for website audits, a client future simulator, a vault of UI/UX case studies, a live strategy brain and a contact flow at hello@uselowkey.online.
+
+## Pages
+
+- [Mission Control (home)](/): Interactive homepage with roast lab, future simulator, case-file vault, insights and contact.
+- [What I Do](/services): Service categories — design, SEO, ads, email, brand and consulting.
+- [Experience](/experience): Results and metrics across rankings, traffic and sales.
+
+## Optional
+
+- [Insights & Articles](/#insights): Long-form articles on conversion, UX and growth.
