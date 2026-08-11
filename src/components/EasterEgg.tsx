@@ -70,7 +70,7 @@ export default function EasterEgg() {
                   ))}
                 </div>
                 <div className="mt-8 pt-6 border-t border-border/60 text-center">
-                  <a href="mailto:alwaysonalowkey@gmail.com?subject=Vault%20Access" className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary hover:underline">
+                  <a href="mailto:hello@uselowkey.online?subject=Vault%20Access" className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary hover:underline">
                     Email me for vault access →
                   </a>
                 </div>

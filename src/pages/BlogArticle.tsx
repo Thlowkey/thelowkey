@@ -58,7 +58,7 @@ export default function BlogArticle() {
             <h3 className="text-2xl font-bold mb-3">Want this applied to your business?</h3>
             <p className="text-muted-foreground mb-6">Send me a note. I'll respond personally.</p>
             <a
-              href={`mailto:alwaysonalowkey@gmail.com?subject=${encodeURIComponent("New Project Inquiry — " + article.title)}`}
+              href={`mailto:hello@uselowkey.online?subject=${encodeURIComponent("New Project Inquiry — " + article.title)}`}
               className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider hover:glow-cyan transition"
             >
               Start a conversation <ArrowRight size={14} />

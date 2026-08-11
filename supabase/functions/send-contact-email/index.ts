@@ -49,7 +49,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: "Low Key <onboarding@resend.dev>",
-        to: ["alwaysonalowkey@gmail.com"],
+        to: ["hello@uselowkey.online"],
         subject: `New Inquiry: ${service} — ${name}`,
         html: htmlBody,
         reply_to: email,

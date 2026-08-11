@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, FileText, Swords, ArrowRight } from "lucide-react";
 
-const EMAIL = "alwaysonalowkey@gmail.com";
+const EMAIL = "hello@uselowkey.online";
 
 const options = [
   {

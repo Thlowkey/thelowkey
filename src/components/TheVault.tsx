@@ -321,7 +321,7 @@ export default function TheVault() {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-xs font-mono uppercase tracking-wider hover:glow-cyan transition">
                     Visit website <ExternalLink size={12} />
                   </a>
-                  <a href={`mailto:alwaysonalowkey@gmail.com?subject=${encodeURIComponent(`New Project Inquiry — inspired by ${open.name}`)}`}
+                  <a href={`mailto:hello@uselowkey.online?subject=${encodeURIComponent(`New Project Inquiry — inspired by ${open.name}`)}`}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-mono uppercase tracking-wider hover:border-primary/40 transition">
                     <Mail size={12} /> Start something like this
                   </a>
