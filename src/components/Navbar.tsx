@@ -63,7 +63,13 @@ export default function Navbar() {
             <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
             {t("nav.initiate")}
           </a>
-          <button className="lg:hidden text-foreground" onClick={() => setOpen(!open)} aria-label="Menu">
+          <button
+            type="button"
+            className="lg:hidden text-foreground min-h-11 min-w-11 inline-flex items-center justify-center"
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={open}
+          >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
