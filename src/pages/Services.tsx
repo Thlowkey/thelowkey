@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Globe, Search, Target, Mail, Compass, LineChart } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const categories = [
   {
@@ -46,6 +47,7 @@ const categories = [
 export default function Services() {
   return (
     <div className="min-h-screen bg-background noise">
+      <Seo title="What I Do — Services by Low Key" description="Website design, SEO, digital advertising, email marketing, brand identity and growth consulting — conversion-first services delivered personally by Low Key." path="/services" />
       <Navbar />
 
       <main className="pt-32 pb-20">
