@@ -33,7 +33,7 @@ export default function BlogArticle() {
               <span>{article.date}</span>
               <span className="flex items-center gap-1.5"><Clock size={12} />{article.readTime}</span>
             </div>
-            <img src={article.image} alt={article.title} className="w-full aspect-[16/9] object-cover rounded-2xl mb-10" loading="lazy" />
+            <img src={article.image} alt={`Illustration for the article ${article.title}`} className="w-full aspect-[16/9] object-cover rounded-2xl mb-10" loading="lazy" />
           </motion.div>
 
           <div className="prose-custom space-y-8 text-foreground/90 leading-relaxed">
