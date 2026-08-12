@@ -105,7 +105,7 @@ export default function Experience() {
                     className="group glass rounded-2xl overflow-hidden hover:border-primary/40 hover:glow-soft transition-all"
                   >
                     <div className="aspect-[16/10] overflow-hidden bg-secondary">
-                      <img src={r.image} alt={r.title} loading="lazy"
+                      <img src={r.image} alt={`${r.title} case result — ${r.metricLabel} ${r.metric}`} loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
                     </div>
                     <div className="p-5">

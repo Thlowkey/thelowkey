@@ -54,7 +54,7 @@ export default function InsightsBlog() {
                 <CarouselItem key={a.slug} className="pl-5 basis-full md:basis-1/2 lg:basis-1/3">
                   <article className="glass rounded-2xl overflow-hidden hover:border-primary/40 transition group flex flex-col h-full">
                     <div className="aspect-[16/10] overflow-hidden">
-                      <img src={a.image} alt={a.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+                      <img src={a.image} alt={`Cover illustration for the article ${a.title}`} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
                     </div>
                     <div className="p-6 flex-1 flex flex-col">
                       <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3">
