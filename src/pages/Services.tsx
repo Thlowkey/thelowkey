@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Globe, Search, Target, Mail, Compass, LineChart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
@@ -95,6 +96,25 @@ export default function Services() {
               );
             })}
           </div>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 border-t border-border pt-10 md:mt-20 md:pt-12"
+            aria-labelledby="author-websites-heading"
+          >
+            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-2xl">
+                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary">For authors and publishers</p>
+                <h2 id="author-websites-heading" className="mt-3 font-heading text-2xl font-semibold md:text-3xl">Author Website Design</h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">A thoughtful digital home for your books, biography, and reader community—shaped around your writing and goals.</p>
+              </div>
+              <Button asChild className="shrink-0 rounded-full px-6 font-mono text-[10px] uppercase tracking-wider">
+                <Link to="/author-website-design">Explore Author Website Design <ArrowRight size={14} /></Link>
+              </Button>
+            </div>
+          </motion.section>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
