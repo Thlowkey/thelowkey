@@ -16,6 +16,7 @@ const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/experience", changefreq: "monthly", priority: "0.8" },
   { path: "/services", changefreq: "monthly", priority: "0.8" },
+  { path: "/author-website-design", changefreq: "monthly", priority: "0.8" },
   ...articles.map((a) => ({
     path: `/blog/${a.slug}`,
     changefreq: "monthly" as const,

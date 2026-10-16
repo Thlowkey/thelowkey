@@ -13,6 +13,7 @@ export default function Navbar() {
 
   const nav = [
     { label: t("nav.services"), href: "/services", route: true as const },
+    { label: "Author Website Design", href: "/author-website-design", route: true as const },
     { label: t("nav.vault"), href: "/#vault" },
     { label: t("nav.insights"), href: "/#insights" },
     { label: t("nav.experience"), href: "/experience", route: true as const },
