@@ -1,5 +1,7 @@
 # Roadmap
 
-- [x] Connect the author website design page to routing, navigation, and service discovery.
-- [x] Add the author website design URL to sitemap generation and the current sitemap.
-- [x] Verify the page, key links, and responsive layouts; resolve any preview issues.
+- [x] Reposition brand guidance and define the approved 13-service catalog.
+- [ ] Replace the homepage, navigation, footer, services, about, work, contact, and obsolete portfolio routes.
+- [ ] Update the AI assistant's visible experience and server-side book-marketing knowledge while preserving its integration.
+- [ ] Replace store-focused articles, SEO, sitemap, and machine-readable site information.
+- [ ] Verify catalog rules, all primary routes, AI/contact interaction, responsive layouts, and preview health; commit the finished changes.
